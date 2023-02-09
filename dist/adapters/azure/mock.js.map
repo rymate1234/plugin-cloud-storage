@@ -1,0 +1,1 @@
+{"version":3,"file":"mock.js","sourceRoot":"","sources":["../../../src/adapters/azure/mock.js"],"names":[],"mappings":";AAAA,OAAO,CAAC,iBAAiB,GAAG;IAC1B,oBAAoB,EAAE,cAAM,OAAA,CAAC;QAC3B,kBAAkB,EAAE,cAAM,OAAA,CAAC;YACzB,iBAAiB,EAAE,cAAM,OAAA,IAAI,EAAJ,CAAI;SAC9B,CAAC,EAFwB,CAExB;KACH,CAAC,EAJ0B,CAI1B;CACH,CAAA"}

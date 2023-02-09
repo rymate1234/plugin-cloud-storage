@@ -239,7 +239,7 @@ demo/generated-types.ts
 demo/generated-schema.graphql
 
 # Ignore dist, no need for git
-dist
+# dist
 
 # Ignore emulator volumes
 src/adapters/s3/emulator/.localstack/
