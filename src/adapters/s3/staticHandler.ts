@@ -28,7 +28,16 @@ export const getHandler = ({ getStorageClient, bucket, collection }: Args): Stat
       })
 
       if (object?.Body) {
-        return (object.Body as Readable).pipe(res)
+        return (object.Body as Readable)
+          .pipe(res)
+          .on('error', err => {
+            // eslint-disable-next-line
+            console.log(object)
+            req.payload.logger.error(err)
+          })
+          .on('close', () => {
+            req.payload.logger.info('S3 Stream Closed')
+          })
       }
 
       return next()
