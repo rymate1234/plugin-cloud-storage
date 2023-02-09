@@ -69,11 +69,12 @@ var getHandler = function (_a) {
                                 .pipe(res)
                                 .on('error', function (err) {
                                 // eslint-disable-next-line
+                                req.payload.logger.error("S3 Stream Error with ".concat(req.params.filename));
                                 console.log(object_1);
                                 req.payload.logger.error(err);
                             })
                                 .on('close', function () {
-                                req.payload.logger.info('S3 Stream Closed');
+                                req.payload.logger.info("S3 Stream Closed for ".concat(req.params.filename));
                             })];
                     }
                     return [2 /*return*/, next()];

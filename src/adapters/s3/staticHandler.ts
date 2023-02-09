@@ -32,11 +32,12 @@ export const getHandler = ({ getStorageClient, bucket, collection }: Args): Stat
           .pipe(res)
           .on('error', err => {
             // eslint-disable-next-line
+            req.payload.logger.error(`S3 Stream Error with ${req.params.filename}`)
             console.log(object)
             req.payload.logger.error(err)
           })
           .on('close', () => {
-            req.payload.logger.info('S3 Stream Closed')
+            req.payload.logger.info(`S3 Stream Closed for ${req.params.filename}`)
           })
       }
 
